@@ -200,24 +200,15 @@ p {
 }
 
 .photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-auto-rows: 220px;
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
 .photo-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px;
   display: block;
-}
-
-.photo-grid img:nth-child(6n+1),
-.photo-grid img:nth-child(6n+5) {
-  grid-column: span 2;
-  grid-row: span 2;
+  border-radius: 12px;
+  object-fit: fill;
 }
 
 .project-list {
@@ -300,14 +291,7 @@ p {
   }
 
   .photo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: 160px;
-  }
-
-  .photo-grid img:nth-child(6n+1),
-  .photo-grid img:nth-child(6n+5) {
-    grid-column: span 2;
-    grid-row: span 2;
+    gap: 4px;
   }
     .inline-link {
     color: var(--accent);
