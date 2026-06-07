@@ -199,6 +199,8 @@ p {
 }
 
 .links-btn {
+  -webkit-appearance: none;
+  appearance: none;
   color: #08080f;
   background: var(--accent);
   padding: 11px 22px;
