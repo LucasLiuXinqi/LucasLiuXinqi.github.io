@@ -5,13 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Lucas Liu</title>
-  <meta name="description" content="Personal website of Lucas Liu — robotics, embodied AI, and developer tools." />
+  <meta
+    name="description"
+    content="Personal website of Lucas Liu — robotics, embodied AI, developer tools, photography, gaming, and collections."
+  />
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <nav class="nav">
+    <a class="nav-name" href="#home">Lucas Liu</a>
+
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
   <main class="container">
-    <section class="hero">
+    <section class="hero" id="home">
       <p class="eyebrow">Robotics · Embodied AI · Developer Tools</p>
 
       <h1>Hi, I’m Lucas Liu.</h1>
@@ -27,36 +41,78 @@
       </div>
     </section>
 
-    <section>
+    <section id="projects">
       <h2>Projects</h2>
 
-      <div class="card">
-        <h3>OpenArm / ROS 2</h3>
-        <p>
-          Work related to robot arm control, ROS 2 bringup, and teleoperation systems.
-        </p>
-      </div>
+      <div class="card-grid">
+        <a class="card project-link" href="https://github.com/LucasLiuXinqi/openarm">
+          <h3>OpenArm / ROS 2</h3>
+          <p>
+            Work related to robot arm control, ROS 2 bringup, and teleoperation systems.
+          </p>
+        </a>
 
-      <div class="card">
-        <h3>VR Teleoperation</h3>
-        <p>
-          Exploring how VR interfaces can control robotic systems more naturally.
-        </p>
-      </div>
+        <div class="card">
+          <h3>VR Teleoperation</h3>
+          <p>
+            Exploring how VR interfaces can control robotic systems more naturally.
+          </p>
+        </div>
 
-      <div class="card">
-        <h3>Agent-assisted Development</h3>
-        <p>
-          Experiments with coding agents, workflow automation, and AI-assisted engineering.
-        </p>
+        <div class="card">
+          <h3>Agent-assisted Development</h3>
+          <p>
+            Experiments with coding agents, workflow automation, and AI-assisted engineering.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Notes</h2>
+    <section id="hobbies">
+      <h2>Hobbies</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <p class="tag">Photography</p>
+          <h3>Photos</h3>
+          <p>
+            I enjoy taking photos and documenting places, objects, and moments that catch my eye.
+          </p>
+          <a class="text-link" href="#">Gallery coming soon →</a>
+        </div>
+
+        <div class="card">
+          <p class="tag">Collection</p>
+          <h3>Toy Collection</h3>
+          <p>
+            I collect model cars, figures, and other small objects that I find interesting.
+          </p>
+          <a class="text-link" href="#">Collection page coming soon →</a>
+        </div>
+
+        <div class="card">
+          <p class="tag">Gaming</p>
+          <h3>Steam</h3>
+          <p>
+            I also play games on Steam and enjoy exploring interactive worlds and systems.
+          </p>
+          <a class="text-link" href="YOUR_STEAM_PROFILE_LINK_HERE">Steam profile →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+
       <p>
-        I’ll use this site to share technical notes, research updates, and project writeups.
+        Feel free to reach out if you want to talk about robotics, embodied AI, developer tools,
+        photography, or collections.
       </p>
+
+      <div class="links">
+        <a href="mailto:liuxnqi@gmail.com">Email</a>
+        <a href="https://github.com/LucasLiuXinqi">GitHub</a>
+      </div>
     </section>
   </main>
 </body>
