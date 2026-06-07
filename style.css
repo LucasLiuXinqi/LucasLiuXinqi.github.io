@@ -235,14 +235,20 @@ p {
 
 .photo-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 8px;
+}
+
+.photo-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
 }
 
 .photo-grid img {
   display: block;
   border-radius: 6px;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .project-list {

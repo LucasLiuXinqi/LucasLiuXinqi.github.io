@@ -3,34 +3,65 @@
   var TARGET = 280; // target row height in px
 
   function layoutGrid(grid) {
+    // Collect images (may live inside .photo-row from a prior layout pass)
     var imgs = Array.from(grid.querySelectorAll('img[data-w]'));
     var W = grid.clientWidth;
     if (!W || !imgs.length) return;
 
+    // Detach images, clear old row wrappers
+    grid.innerHTML = '';
+
     var row = [];
     var sumRatio = 0;
 
-    function flushRow(isLast) {
-      if (!row.length) return;
-      var gaps = GAP * (row.length - 1);
-      var h = (isLast && sumRatio * TARGET + gaps < W * 0.85)
-        ? TARGET
-        : (W - gaps) / sumRatio;
-      row.forEach(function (img) {
+    function commitRow(images, isLast) {
+      if (!images.length) return;
+
+      var gaps = GAP * (images.length - 1);
+      var localSum = images.reduce(function (s, img) {
+        return s + (+img.dataset.w / +img.dataset.h);
+      }, 0);
+
+      // Short last row: don't stretch, keep at target height
+      var stretch = !(isLast && localSum * TARGET + gaps < W * 0.8);
+
+      var rowDiv = document.createElement('div');
+      rowDiv.className = 'photo-row';
+
+      images.forEach(function (img) {
         var r = +img.dataset.w / +img.dataset.h;
-        img.style.width  = (h * r).toFixed(1) + 'px';
-        img.style.height = h.toFixed(1) + 'px';
+        // Let CSS aspect-ratio hold the shape; flex-grow fills width
+        img.style.aspectRatio = img.dataset.w + ' / ' + img.dataset.h;
+        img.style.minWidth = '0';
+
+        if (stretch) {
+          img.style.flexGrow  = r;   // proportional growth = same height for all
+          img.style.flexBasis = '0';
+          img.style.height    = '';
+          img.style.width     = '';
+        } else {
+          img.style.flexGrow  = '0';
+          img.style.flexBasis = 'auto';
+          img.style.height    = TARGET + 'px';
+          img.style.width     = 'auto';
+        }
+
+        rowDiv.appendChild(img);
       });
-      row = []; sumRatio = 0;
+
+      grid.appendChild(rowDiv);
     }
 
     imgs.forEach(function (img) {
       var r = +img.dataset.w / +img.dataset.h;
       row.push(img);
       sumRatio += r;
-      if (sumRatio * TARGET + GAP * (row.length - 1) >= W) flushRow(false);
+      if (sumRatio * TARGET + GAP * (row.length - 1) >= W) {
+        commitRow(row, false);
+        row = []; sumRatio = 0;
+      }
     });
-    flushRow(true);
+    commitRow(row, true); // flush remaining images
   }
 
   function runAll() {
