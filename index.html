@@ -59,8 +59,8 @@
 
       <div class="links">
         <a href="projects.html">View Projects</a>
-        <button class="links-btn copy-email" data-email="xl4600@nyu.edu">xl4600@nyu.edu</button>
-        <button class="links-btn copy-email" data-email="liuxnqi@gmail.com">liuxnqi@gmail.com</button>
+        <a href="#" class="copy-email" data-email="xl4600@nyu.edu">xl4600@nyu.edu</a>
+        <a href="#" class="copy-email" data-email="liuxnqi@gmail.com">liuxnqi@gmail.com</a>
       </div>
     </section>
 
@@ -111,19 +111,20 @@
       </p>
 
       <div class="links">
-        <button class="links-btn copy-email" data-email="xl4600@nyu.edu">xl4600@nyu.edu</button>
-        <button class="links-btn copy-email" data-email="liuxnqi@gmail.com">liuxnqi@gmail.com</button>
+        <a href="#" class="copy-email" data-email="xl4600@nyu.edu">xl4600@nyu.edu</a>
+        <a href="#" class="copy-email" data-email="liuxnqi@gmail.com">liuxnqi@gmail.com</a>
         <a href="https://github.com/LucasLiuXinqi">GitHub</a>
       </div>
     </section>
   </main>
   <script>
-    document.querySelectorAll('.copy-email').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        navigator.clipboard.writeText(btn.dataset.email).then(function () {
-          var orig = btn.textContent;
-          btn.textContent = 'Copied!';
-          setTimeout(function () { btn.textContent = orig; }, 1500);
+    document.querySelectorAll('.copy-email').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        navigator.clipboard.writeText(el.dataset.email).then(function () {
+          var orig = el.textContent;
+          el.textContent = 'Copied!';
+          setTimeout(function () { el.textContent = orig; }, 1500);
         });
       });
     });
