@@ -36,8 +36,8 @@
 
       <div class="hero-photo-wrap">
         <div class="hero-photo-stack">
-          <img class="hero-photo hero-photo--default" src="images/profile-hover.jpg" alt="Lucas Liu" />
-          <img class="hero-photo hero-photo--hover" src="images/profile.jpg" alt="" aria-hidden="true" />
+          <img class="hero-photo hero-photo--default" src="images/profile.jpg" alt="Lucas Liu" />
+          <img class="hero-photo hero-photo--hover" src="images/profile-hover.jpg" alt="" aria-hidden="true" />
         </div>
       </div>
 
@@ -59,8 +59,8 @@
 
       <div class="links">
         <a href="projects.html">View Projects</a>
-        <a href="mailto:xl4600@nyu.edu">NYU Email</a>
-        <a href="mailto:liuxnqi@gmail.com">Gmail</a>
+        <button class="links-btn copy-email" data-email="xl4600@nyu.edu">xl4600@nyu.edu</button>
+        <button class="links-btn copy-email" data-email="liuxnqi@gmail.com">liuxnqi@gmail.com</button>
       </div>
     </section>
 
@@ -111,11 +111,22 @@
       </p>
 
       <div class="links">
-        <a href="mailto:xl4600@nyu.edu">NYU Email</a>
-        <a href="mailto:liuxnqi@gmail.com">Gmail</a>
+        <button class="links-btn copy-email" data-email="xl4600@nyu.edu">xl4600@nyu.edu</button>
+        <button class="links-btn copy-email" data-email="liuxnqi@gmail.com">liuxnqi@gmail.com</button>
         <a href="https://github.com/LucasLiuXinqi">GitHub</a>
       </div>
     </section>
   </main>
+  <script>
+    document.querySelectorAll('.copy-email').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        navigator.clipboard.writeText(btn.dataset.email).then(function () {
+          var orig = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(function () { btn.textContent = orig; }, 1500);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
