@@ -226,6 +226,49 @@ p {
   border: 1px solid var(--border);
 }
 
+.project-list {
+  display: grid;
+  gap: 24px;
+}
+
+.project-entry {
+  padding: 32px;
+}
+
+.featured-project {
+  border-color: rgba(56, 189, 248, 0.55);
+}
+
+.project-title {
+  margin: 0 0 16px;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.12;
+}
+
+.project-meta {
+  color: var(--accent) !important;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.project-status {
+  display: inline-block;
+  margin: 0 0 20px;
+  padding: 8px 12px;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  border-radius: 999px;
+  color: var(--accent) !important;
+  background: rgba(56, 189, 248, 0.08);
+  font-weight: 800;
+}
+
+.project-actions {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
 #contact {
   margin-bottom: 40px;
 }
