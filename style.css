@@ -339,6 +339,10 @@ p {
 
 .projects-page .project-image {
   display: block;
+  width: 100%;
+  max-width: 380px;
+  min-width: 0;
+  margin-inline: auto;
   overflow: hidden;
   border-radius: 6px;
   background: #fff;
@@ -347,6 +351,7 @@ p {
 .projects-page .project-image img {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
