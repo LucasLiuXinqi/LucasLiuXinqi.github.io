@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="projects-page">
   <nav class="nav">
     <a class="nav-name" href="index.html">Lucas Liu</a>
 
@@ -47,55 +47,41 @@
       </div>
     </section>
 
-    <section>
+    <section aria-label="Selected projects">
       <div class="project-list">
-        <article class="card project-entry featured-project">
-          <p class="tag">Featured · Dexterous Robotics</p>
+        <article class="card project-entry featured-project" aria-labelledby="ruka-v2-title">
+          <a class="project-image" href="https://ruka-hand-v2.github.io/" aria-label="Explore the RUKA-v2 project">
+            <img
+              src="images/projects/ruka-v2-figure-1.png"
+              alt="Figure 1 from the RUKA-v2 paper: the real robotic hand grasping a block, with its parallel wrist, side mount, magnetic encoders, and soft fingertips highlighted."
+              width="2027"
+              height="1140"
+            />
+          </a>
 
-          <h2 class="project-title">
-            RUKA-v2: Tendon Driven Open-Source Dexterous Hand with Wrist and Abduction for Robot Learning
-          </h2>
-
-          <p class="project-meta">
-            Xinqi Liu, Ruoxi Hu, Alejandro Ojeda Olarte, Zhuoran Chen, Kenny Ma,
-            Charles Cheng Ji, Lerrel Pinto, Raunaq Bhirangi, Irmak Guzey
-          </p>
-
-          <p class="project-status">
-            Accepted to ICRA Workshop · Spotlight
-          </p>
-
-          <p>
-            RUKA-v2 is a fully open-source, tendon-driven humanoid hand for robot learning.
-            It extends the original RUKA hand with a decoupled 2-DOF parallel wrist and
-            finger abduction/adduction, enabling more human-like dexterous manipulation
-            behaviors such as confined-space manipulation, in-hand rotation, and calligraphy.
-          </p>
-          
-          <p>
-            The system supports bimanual and single-arm teleoperation across dexterous tasks,
-            as well as autonomous policy learning for robot manipulation.
-          </p>
-
-          <div class="project-actions">
-            <a class="text-link" href="https://ruka-hand-v2.github.io/">Project page →</a>
-            <a class="text-link" href="https://arxiv.org/abs/2603.26660">Paper →</a>
-            <a class="text-link" href="https://openreview.net/forum?id=SQcMFrxg4L">OpenReview →</a>
+          <div class="project-details">
+            <p class="project-status">Accepted · IEEE Humanoids 2026</p>
+            <h2 class="project-title" id="ruka-v2-title">RUKA-v2</h2>
+            <p class="project-subtitle">
+              Tendon Driven Open-Source Dexterous Hand with Wrist and Abduction for Robot Learning
+            </p>
+            <p class="project-meta">
+              <strong>Xinqi Liu</strong>, Ruoxi Hu, Alejandro Ojeda Olarte, Zhuoran Chen, Kenny Ma,
+              Charles Cheng Ji, Lerrel Pinto, Raunaq Bhirangi, Irmak Guzey
+            </p>
+            <p class="project-venue">ICRA Workshop · Spotlight</p>
+            <p class="project-description">
+              An open-source, tendon-driven humanoid hand with a decoupled 2-DOF wrist
+              and finger abduction/adduction for dexterous teleoperation and robot learning.
+            </p>
+            <div class="project-actions">
+              <a class="text-link" href="https://ruka-hand-v2.github.io/">Project page →</a>
+              <a class="text-link" href="https://arxiv.org/abs/2603.26660">Paper →</a>
+              <a class="text-link" href="https://openreview.net/forum?id=SQcMFrxg4L">OpenReview →</a>
+            </div>
           </div>
         </article>
-
-        <article class="card project-entry empty-card">
-          <p class="tag">More Coming Soon</p>
-
-          <h2 class="project-title">
-            Additional papers and projects
-          </h2>
-
-          <p>
-            I’ll add more projects and publication entries here as I organize my
-            research work, code, videos, and project pages.
-          </p>
-        </article>
+        <p class="projects-note">More projects and publications coming soon.</p>
       </div>
     </section>
   </main>
