@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="max-image-preview:large" />
 
   <title>Lucas Liu (Xinqi Liu) | Robotics &amp; AI | NYU</title>
   <meta name="description" content="Lucas (Xinqi) Liu is a Computer Science PhD student at NYU Courant, researching robotics, embodied AI, dexterous manipulation, and robot learning." />
@@ -17,30 +18,56 @@
   <meta property="og:image" content="https://lucasliuxinqi.github.io/images/profile.jpg" />
   <meta property="og:image:width" content="600" />
   <meta property="og:image:height" content="556" />
-  <meta property="og:image:alt" content="Lucas Liu (Xinqi Liu)" />
+  <meta property="og:image:alt" content="Portrait of Lucas Liu (Xinqi Liu), Computer Science PhD student at NYU" />
   <link rel="stylesheet" href="style.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Lucas Liu",
-    "alternateName": "Xinqi Liu",
-    "url": "https://lucasliuxinqi.github.io/",
-    "image": "https://lucasliuxinqi.github.io/images/profile.jpg",
-    "description": "Lucas (Xinqi) Liu is a Computer Science PhD student at NYU Courant, researching robotics, embodied AI, dexterous manipulation, and robot learning.",
-    "affiliation": {
-      "@type": "CollegeOrUniversity",
-      "name": "New York University"
-    },
-    "knowsAbout": [
-      "Robotics",
-      "Embodied AI",
-      "Robot Learning",
-      "Dexterous Manipulation"
-    ],
-    "sameAs": [
-      "https://github.com/LucasLiuXinqi",
-      "https://scholar.google.com/citations?user=ZZwEwbQAAAAJ"
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://lucasliuxinqi.github.io/#person",
+        "name": "Lucas Liu",
+        "alternateName": "Xinqi Liu",
+        "url": "https://lucasliuxinqi.github.io/",
+        "image": "https://lucasliuxinqi.github.io/images/profile.jpg",
+        "description": "Lucas (Xinqi) Liu is a Computer Science PhD student at NYU Courant, researching robotics, embodied AI, dexterous manipulation, and robot learning.",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "New York University"
+        },
+        "knowsAbout": [
+          "Robotics",
+          "Embodied AI",
+          "Robot Learning",
+          "Dexterous Manipulation"
+        ],
+        "sameAs": [
+          "https://github.com/LucasLiuXinqi",
+          "https://scholar.google.com/citations?user=ZZwEwbQAAAAJ"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://lucasliuxinqi.github.io/#webpage",
+        "url": "https://lucasliuxinqi.github.io/",
+        "name": "Lucas Liu (Xinqi Liu) | Robotics & AI | NYU",
+        "mainEntity": {
+          "@id": "https://lucasliuxinqi.github.io/#person"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://lucasliuxinqi.github.io/#profile-photo"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://lucasliuxinqi.github.io/#profile-photo",
+        "url": "https://lucasliuxinqi.github.io/images/profile.jpg",
+        "contentUrl": "https://lucasliuxinqi.github.io/images/profile.jpg",
+        "width": 600,
+        "height": 556,
+        "caption": "Portrait of Lucas Liu (Xinqi Liu), Computer Science PhD student at NYU"
+      }
     ]
   }
   </script>
@@ -69,7 +96,7 @@
 
       <div class="hero-photo-wrap">
         <div class="hero-photo-stack">
-          <img class="hero-photo hero-photo--default" src="images/profile.jpg" alt="Lucas Liu (Xinqi Liu)" />
+          <img class="hero-photo hero-photo--default" src="images/profile.jpg" alt="Portrait of Lucas Liu (Xinqi Liu), Computer Science PhD student at NYU" />
           <img class="hero-photo hero-photo--hover" src="images/profile-hover.jpg" alt="" aria-hidden="true" />
         </div>
       </div>
