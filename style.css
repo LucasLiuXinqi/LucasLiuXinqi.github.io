@@ -300,36 +300,103 @@ p {
   object-fit: cover;
 }
 
+/* Photography links remain usable when JavaScript or dialog support is absent. */
+.photo-grid--interactive:not(.gallery-ready) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+}
+
+.photo-grid--interactive .gallery-photo {
+  display: block;
+  position: relative;
+  min-width: 0;
+  flex-basis: 0;
+  border-radius: 6px;
+}
+
+.photo-grid--interactive .gallery-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gallery-photo:focus-visible {
+  outline: 3px solid #e9bd55;
+  outline-offset: 4px;
+  z-index: 6;
+}
+
 @media (hover: hover) and (pointer: fine) {
-  .photo-grid--hover img {
-    position: relative;
+  .photo-grid--hover .gallery-photo {
     z-index: 0;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
 
-  .photo-grid--hover img:hover {
+  .photo-grid--hover .gallery-photo:hover {
     z-index: 5;
     transform: translateY(-8px) scale(1.25);
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.65);
   }
 
-  .photo-grid--hover .photo-row img:first-child {
-    transform-origin: left center;
-  }
-
-  .photo-grid--hover .photo-row img:last-child {
-    transform-origin: right center;
-  }
-
-  .photo-grid--hover .photo-row img:only-child:hover {
-    transform: translateY(-8px);
-  }
+  .photo-grid--hover .photo-row .gallery-photo:first-child { transform-origin: left center; }
+  .photo-grid--hover .photo-row .gallery-photo:last-child { transform-origin: right center; }
+  .photo-grid--hover .photo-row .gallery-photo:only-child:hover { transform: translateY(-8px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .photo-grid--hover img {
-    transition: none;
-  }
+  .photo-grid--hover .gallery-photo { transition: none; }
+}
+
+.photo-viewer {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 64px 76px 32px;
+  border: 0;
+  background: rgba(8, 8, 15, 0.96);
+  color: #fff;
+  overflow: hidden;
+}
+
+.photo-viewer[open] { display: flex; align-items: center; justify-content: center; }
+.photo-viewer::backdrop { background: rgba(0, 0, 0, 0.8); }
+.photo-viewer figure { margin: 0; max-width: 100%; text-align: center; }
+.photo-viewer__image {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 180px);
+  max-height: calc(100dvh - 180px);
+  margin: auto;
+  object-fit: contain;
+}
+.photo-viewer figcaption { margin: 14px auto 0; max-width: 900px; font-size: 0.9rem; }
+.photo-viewer__position { margin: 8px 0 0; color: #bbb; font-size: 0.8rem; }
+.photo-viewer button {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid #777;
+  border-radius: 50%;
+  background: #20202a;
+  color: #fff;
+  font: 32px/1 sans-serif;
+  cursor: pointer;
+}
+.photo-viewer button:focus-visible { outline: 3px solid #e9bd55; outline-offset: 3px; }
+.photo-viewer__close { top: 12px; right: 16px; }
+.photo-viewer__previous { left: 12px; top: calc(50% - 24px); }
+.photo-viewer__next { right: 12px; top: calc(50% - 24px); }
+
+@media (max-width: 540px) {
+  .photo-viewer { padding: 68px 52px 24px; }
+  .photo-viewer button { width: 44px; height: 44px; }
+  .photo-viewer__previous { left: 4px; }
+  .photo-viewer__next { right: 4px; }
 }
 
 .projects-page .container {
