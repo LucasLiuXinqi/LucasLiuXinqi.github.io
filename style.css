@@ -320,30 +320,6 @@ p {
   object-fit: contain;
 }
 
-/* A decorative site overlay complements the mark in downloaded web copies. */
-.photo-watermark {
-  position: absolute;
-  left: 10px;
-  bottom: 10px;
-  color: rgba(255, 255, 255, 0.65);
-  font: 11px/1.2 sans-serif;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-  pointer-events: none;
-  opacity: 0;
-}
-
-.gallery-photo:hover .photo-watermark,
-.gallery-photo:focus-visible .photo-watermark,
-.photo-viewer__picture:hover .photo-watermark,
-.photo-viewer:focus-within .photo-watermark { opacity: 1; }
-
-.photo-viewer__picture {
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-  vertical-align: top;
-}
-
 .gallery-photo:focus-visible {
   outline: 3px solid #e9bd55;
   outline-offset: 4px;
