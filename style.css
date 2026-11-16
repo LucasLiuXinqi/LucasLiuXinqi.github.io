@@ -373,7 +373,6 @@ p {
   margin: auto;
   object-fit: contain;
 }
-.photo-viewer figcaption { margin: 14px auto 0; max-width: 900px; font-size: 0.9rem; }
 .photo-viewer__position { margin: 8px 0 0; color: #bbb; font-size: 0.8rem; }
 .photo-viewer button {
   position: absolute;

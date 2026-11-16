@@ -15,7 +15,7 @@
     return Array.from({ length: rows }, function (_, i) { return base + (i < extra ? 1 : 0); });
   }
 
-  function setupPhotography(grid) {
+  function setupGallery(grid) {
     var links = Array.from(grid.querySelectorAll('.gallery-photo'));
     var dialog = document.querySelector('.photo-viewer');
     var current = 0;
@@ -28,7 +28,6 @@
       var image = dialog.querySelector('.photo-viewer__image');
       image.src = source.src;
       image.alt = source.alt;
-      dialog.querySelector('figcaption').textContent = source.alt;
       dialog.querySelector('.photo-viewer__position').textContent = (current + 1) + ' / ' + links.length;
     }
 
@@ -155,7 +154,7 @@
   function runAll() {
     document.querySelectorAll('.photo-grid').forEach(function (grid) {
       if (grid.classList.contains('photo-grid--interactive')) {
-        if (!grid.galleryLayout) grid.galleryLayout = setupPhotography(grid);
+        if (!grid.galleryLayout) grid.galleryLayout = setupGallery(grid);
         grid.galleryLayout();
       } else {
         layoutGrid(grid);
